@@ -15,7 +15,7 @@ def make_predict():
     data = request.get_json(force=True)
     # transforms
     predict_request = [data['review']]
-    predict_request = vectorizer.fit_transform(predict_request)
+    predict_request = vectorizer.transform(predict_request)
     # preds
     y_hat = my_model.predict(predict_request)
     # send preds back
